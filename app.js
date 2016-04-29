@@ -31,13 +31,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+//set up session
 app.use(session({
      secret: "I love scotch",
  }));
  app.use(passport.initialize());
  app.use(passport.session());
 
+
+//serialize and deserialize
+ passport.serializeUser(User.serializeUser());
+ passport.deserializeUser(User.deserializeUser());
 
 
 app.use('/', routes);
