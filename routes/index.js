@@ -9,13 +9,6 @@ function isLoggedIn(req, res, next) {
     res.redirect('/');
   }
 }
-//   if (req.isAuthenticated()) {
-//     next();
-//   } else {
-//     res.redirect('/');
-//   }
-// }
-
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -35,6 +28,11 @@ router.get('/profile', isLoggedIn, function(req, res, next) {
 /* GET search page. */
 router.get('/search', function(req, res, next) {
   res.render('search');
+})
+
+/* GET signin page. */
+router.get('/signin', function(req, res, next) {
+  res.render('signin');
 })
 
 module.exports = router;
