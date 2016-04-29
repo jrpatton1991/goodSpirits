@@ -4,23 +4,27 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var session = require('express-session');
-var app = express();
 
-
-var app = express();
 
 //Mongoose config
 var mongoose = require('mongoose');
 mongoose.connect(process.env.DB_CONN_GOOD_SPIRITS);
-// user schema
-var User = require('./models/user')
 
+
+//Passport configuration
+var passport = require('passport');
+var User = require('./models/user')
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var app = express();
 
 
 // view engine setup
@@ -36,19 +40,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //set up session
 app.use(session({
-     secret: "I love scotch",
+     secret: process.env.SESSION_KEY || 'foobar',
      resave: false,
      saveUninitialized: false
  }));
  app.use(passport.initialize());
  app.use(passport.session());
-
-
-//serialize and deserialize
-passport.use(User.createStrategy());
-
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 
 app.use('/', routes);
