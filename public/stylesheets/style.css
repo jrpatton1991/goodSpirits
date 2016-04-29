@@ -50,3 +50,27 @@ a {
   left: 0;
   margin-left: -9px;
 }
+
+#loginlink:hover{
+  /*font-size: 105%;*/
+  background: #8B0000;
+  height: 20px;
+  width: 39px;
+  text-align: center;
+}
+
+#signuplink:hover{
+  /*font-size: 105%;*/
+  background: #8B0000;
+  height: 20px;
+  width: 50px;
+  text-align: center;
+}
+
+#searchlink:hover{
+  /*font-size: 105%;*/
+  background: #8B0000;
+  height: 20px;
+  width: 45px;
+  text-align: center;
+}
