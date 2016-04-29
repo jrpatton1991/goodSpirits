@@ -1,4 +1,6 @@
 var express = require('express');
+var passport = require('passport');
+var User = require('../models/user');
 var router = express.Router();
 
 /* login authentication function */
@@ -18,8 +20,12 @@ router.get('/', function(req, res, next) {
 /* GET login page. */
 router.get('/login', function(req, res, next) {
   res.render('login');
-})
+});
 
+router.post('/login', passport.authenticate('local'),function(req, res, err) {
+    console.log(err)
+  //  res.redirect('/');
+  });
 /* GET profile page. */
 router.get('/profile', isLoggedIn, function(req, res, next) {
   res.render('profile');

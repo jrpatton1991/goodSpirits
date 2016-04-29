@@ -14,6 +14,7 @@ var app = express();
 //Mongoose config
 var mongoose = require('mongoose');
 mongoose.connect(process.env.DB_CONN_GOOD_SPIRITS);
+// user schema
 var User = require('./models/user')
 
 var routes = require('./routes/index');
@@ -35,14 +36,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 //set up session
 app.use(session({
      secret: "I love scotch",
+     resave: false,
+     saveUninitialized: false
  }));
  app.use(passport.initialize());
  app.use(passport.session());
 
 
 //serialize and deserialize
- passport.serializeUser(User.serializeUser());
- passport.deserializeUser(User.deserializeUser());
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 
 app.use('/', routes);
