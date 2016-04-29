@@ -14,6 +14,7 @@ var app = express();
 //Mongoose config
 var mongoose = require('mongoose');
 mongoose.connect(process.env.DB_CONN_GOOD_SPIRITS);
+var User = require('./models/user')
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
