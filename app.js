@@ -15,7 +15,7 @@ mongoose.connect(process.env.DB_CONN_GOOD_SPIRITS);
 
 //Passport configuration
 var passport = require('passport');
-var User = require('./models/user')
+var User = require('./models/user');
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
