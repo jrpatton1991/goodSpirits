@@ -24,7 +24,7 @@ router.get('/login', function(req, res, next) {
 
 router.post('/login', passport.authenticate('local'),function(req, res, err) {
     console.log(err)
-  //  res.redirect('/');
+   res.redirect('/profile');
   });
 
 /* GET profile page. */
@@ -37,9 +37,27 @@ router.get('/search', function(req, res, next) {
   res.render('search');
 })
 
-/* GET signin page. */
+/* GET signup page. */
 router.get('/signup', function(req, res, next) {
   res.render('signup');
 })
+
+/* POST signup page */
+router.post('/signup', function(req, res, next){
+  var user = new User({ username: req.body.username });
+  User.register(user, req.body.password, function(error) {
+    if (error) {
+      res.send(error);
+    } else {
+      req.login(user, function(loginError) {
+        if (loginError) {
+          res.send(loginError);
+        } else {
+          res.redirect('/profile');
+        }
+      });
+    }
+  })
+});
 
 module.exports = router;
