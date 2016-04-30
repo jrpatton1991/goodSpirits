@@ -6,13 +6,21 @@ var apiKey = process.env.LCBO_KEY;
 
 
 router.get('/beers', function(req,res,next){
-  request.get( 'http://www.lcboapi.com/products?per_page=5&q=beer&access_key=' + apiKey,
-   function(err, data){
-    var beers =  JSON.parse(data.body);
-    res.json(beers.result[4])
-  })
-  console.log
-})
+  var beers = []
+  for( var i = 1; i <= 11 ; i ++){
+    request.get( 'http://www.lcboapi.com/products?per_page=100&page='+ i +'&q=beer&access_key=' + apiKey,
+     function(err, data){
+       var beerList = JSON.parse(data.body);
+       beers = beers.concat(beers, beerList);
+       console.log(beerList.pager.is_final_page)
+
+       if(beerList.pager.is_final_page){
+         console.log(beerList.pager.is_final_page)
+         res.json(beers);
+       };
+    });
+  };
+});
 
 
 
