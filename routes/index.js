@@ -25,24 +25,24 @@ router.get('/login', function(req, res, next) {
 });
 
 router.post('/login', passport.authenticate('local'),function(req, res, err) {
-    console.log(err)
+    console.log(err);
    res.redirect('/profile');
   });
 
 /* GET profile page. */
 router.get('/profile', isLoggedIn, function(req, res, next) {
-  res.render('profile');
-})
+  res.render('profile', {"userId":req.user.username});
+});
 
 /* GET search page. */
 router.get('/search', function(req, res, next) {
   res.render('search');
-})
+});
 
 /* GET signup page. */
 router.get('/signup', function(req, res, next) {
   res.render('signup');
-})
+});
 
 /* POST signup page */
 router.post('/signup', function(req, res, next){
@@ -59,8 +59,23 @@ router.post('/signup', function(req, res, next){
         }
       });
     }
-  })
+  });
 });
 
+/* Post Likes */
+router.post('/likes', function(req, res, next) {
+  var userId = req.user._id;
+  var beerId = req.params.id;
+  console.log(userId);
+  var likes = new Likes({ userId: userId });
+    likes.save(likes, beerId, function(error) {
+      if (error) {
+        res.send(error);
+      } else {
+        res.json(likes);
+        res.send('Beer Liked!');
+        }
+    });
+});
 
 module.exports = router;
