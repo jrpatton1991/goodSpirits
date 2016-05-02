@@ -25,19 +25,19 @@ function updateBeerList(){
   }
   console.log(searchedBeers)
 
-  $('ul').html(null)
+  $('#beerList').html(null)
   listArr(searchedBeers)
 }
-
 function listArr(list){
   console.log(list[0]);
   for(i = 0; i < list.length; i++){
-    $('ul').append('<li>' + list[i] + '</li>');
+    $('#beerList').append('<li>' + list[i] + '</li>');
   };
 }
 
+
 function getBeers(){
-  $('ul').html('loading...');
+  $('#beerList').html('loading...');
   $.ajax({
     url: '/drinks/beers',
     method:'get',
@@ -47,9 +47,9 @@ function getBeers(){
     for( var i = 0; i < data.length; i++){
       beerName.push(data[i].name);
     }
-    $('ul').html(null);
+    $('#beerList').html(null);
     for(i = 0; i < beerName.length; i++){
-      $('ul').append('<li>' + beerName[i] + '</li>');
+      $('#beerList').append('<li>' + beerName[i] + '</li>');
     };
   })
   .fail(function(err, textStatus){

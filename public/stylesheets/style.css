@@ -52,7 +52,6 @@ a {
 }
 
 #loginlink:hover{
-  /*font-size: 105%;*/
   background: #8B0000;
   height: 20px;
   width: 39px;
@@ -60,7 +59,6 @@ a {
 }
 
 #signuplink:hover{
-  /*font-size: 105%;*/
   background: #8B0000;
   height: 20px;
   width: 50px;
@@ -68,9 +66,28 @@ a {
 }
 
 #searchlink:hover{
-  /*font-size: 105%;*/
   background: #8B0000;
   height: 20px;
   width: 45px;
   text-align: center;
 }
+
+#homelink:hover{
+  background: #8B0000;
+  height: 20px;
+  width: 37px;
+  text-align: center;
+}
+
+#searchbar {
+  margin-top: 100px;
+}
+
+.maincontent {
+  margin-top: 100px;
+}
+
+#signupform {
+  margin-top: 100px;
+}
+
