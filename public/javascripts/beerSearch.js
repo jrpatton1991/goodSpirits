@@ -70,3 +70,18 @@ function getBeers(){
     console.log(err);
   })
 }
+
+//function to add likes to db//
+function postLikes(){
+  $.ajax({
+    url: '/likes/:id',
+    method:'POST',
+    dataType:'json'
+  })
+  .done(function(data, textStatus){
+
+    }
+  .fail(function(err, textStatus){
+    console.log(err);
+  })
+}
