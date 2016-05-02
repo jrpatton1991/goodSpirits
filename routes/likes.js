@@ -18,8 +18,8 @@ router.post('/', function(req, res, next) {
         res.json(likes);
         res.send('Beer Liked!');
         }
-    })
-})
+    });
+});
 
 // var liked = req.user._id;
 
