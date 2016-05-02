@@ -1,5 +1,6 @@
 //global vars
 var beerName = [];
+var beerId = [];
 
 // on dom load
 $(document).ready(function() {
@@ -32,7 +33,7 @@ function updateBeerList(){
 function listArr(list){
   console.log(list[0]);
   for(i = 0; i < list.length; i++){
-    $('ul').append('<li>' + list[i] + '</li>');
+    $('ul').append('<li>' + list[i] + ' <a href="/likes/' + beerId[i] + '" >Like!</a></li>'  );
   };
 }
 
@@ -46,10 +47,11 @@ function getBeers(){
   .done(function(data, textStatus){
     for( var i = 0; i < data.length; i++){
       beerName.push(data[i].name);
+      beerId.push(data[i].id);
     }
     $('ul').html(null);
     for(i = 0; i < beerName.length; i++){
-      $('ul').append('<li>' + beerName[i] + '</li>');
+      $('ul').append('<li>' + beerName[i] + ' <a href="/likes/' + beerId[i] + '" >Like!</a></li>');
     };
   })
   .fail(function(err, textStatus){
