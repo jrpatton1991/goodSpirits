@@ -8,9 +8,10 @@ $(document).ready(function() {
   getBeers();
   // keypress event listener for search
   $('#searchForBeer').keyup(function(e){
-    console.log('good')
     updateBeerList();
   });
+
+
 });
 
 function updateBeerList(){
@@ -33,7 +34,7 @@ function listArr(list){
   console.log(list[0]);
   for(i = 0; i < list.length; i++){
 
-    $('#beerList').append('<li>' + list[i] + ' <a class="hidden button" href="/likes/' + beerId[i] + '" >Like!</a></li>'  );
+    $('#beerList').append('<li>' + list[i] + ' <button class="hidden button" data-id="' + beerId[i] + '">Like!</button></li>'  );
 
   };
 }
@@ -53,25 +54,33 @@ function getBeers(){
     }
     $('#beerList').html(null);
     for(i = 0; i < beerName.length; i++){
-      $('#beerList').append('<li>' + beerName[i] + ' <a class="hidden button" href="/likes/' + beerId[i] + '" >Like!</a></li>');
+      $('#beerList').append('<li>' + beerName[i] + ' <button class="hidden button" data-id="' + beerId[i] + '">Like!</button></li>');
     };
+    // event listener for like btns
+    setEventForLike();
   })
   .fail(function(err, textStatus){
     console.log(err);
   })
 }
 
-//function to add likes to db//
-function postLikes(){
-  $.ajax({
-    url: '/likes/:id',
-    method:'POST',
-    dataType:'json'
-  })
-  .done(function(data, textStatus){
-
-  })
-  .fail(function(err, textStatus){
-    console.log(err);
+//function to add likes to db
+function setEventForLike(){
+  $('.button').click(function(e){
+    var beerId = $(this).data('id');
+    function postLikes(){
+      $.ajax({
+        url: '/likes',
+        method:'POST',
+        dataType:'json',
+        data:{ id : beerId }
+      })
+      .done(function(data, textStatus){
+        console.log(data + " : " + textStatus)
+      })
+      .fail(function(err, textStatus){
+        console.log(err);
+      })
+    }
   })
 }

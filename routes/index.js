@@ -61,10 +61,10 @@ router.post('/signup', function(req, res, next){
 });
 
 /* Post Likes */
-router.post('likes/:id', isLoggedIn, function(req, res, next) {
-  var userId = req.body.username;
+router.post('/likes/:id', function(req, res, next) {
+  var userId = req.user._id;
   var beerId = req.params.id;
-
+  console.log(userId);
   var likes = new Likes({ userId: userId });
     Likes.insert(likes, beerId, function(error) {
       if (error) {
@@ -73,8 +73,8 @@ router.post('likes/:id', isLoggedIn, function(req, res, next) {
         likes.save(function(err, user) {
           if (err) console.log(err);
         })
-          res.json(likes);
-          res.send('Beer Liked!');
+            res.json(likes);
+            res.send('Beer Liked!');
         }
     })
 })
