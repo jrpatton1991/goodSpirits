@@ -4,6 +4,9 @@ var request = require('request');
 var apiKey = process.env.LCBO_KEY;
 /* GET users listing. */
 
+router.get('/likes', function(req,res,next){
+  console.log('the get likes endpoint has been hit');
+});
 
 router.get('/beers', function(req,res,next){
   var beers = []
