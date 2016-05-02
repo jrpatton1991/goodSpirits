@@ -68,7 +68,8 @@ function getBeers(){
 function setEventForLike(){
   $('.button').click(function(e){
     var beerId = $(this).data('id');
-    function postLikes(){
+    console.log('working');
+    // function postLikes(){
       $.ajax({
         url: '/likes',
         method:'POST',
@@ -81,6 +82,6 @@ function setEventForLike(){
       .fail(function(err, textStatus){
         console.log(err);
       })
-    }
+    // }
   })
 }
