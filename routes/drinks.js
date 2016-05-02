@@ -16,7 +16,6 @@ router.get('/beers', function(req,res,next){
        Array.prototype.push.apply(beers, beerList.result);
        console.log(beers.length);
        if(beers.length >= 1030){
-         console.log(beers.length)
          res.json(beers);
        };
     });
