@@ -60,4 +60,23 @@ router.post('/signup', function(req, res, next){
   })
 });
 
+/* Post Likes */
+router.post('likes/:id', isLoggedIn, function(req, res, next) {
+  var userId = req.body.username;
+  var beerId = req.params.id;
+
+  var likes = new Likes({ userId: userId });
+    Likes.insert(likes, beerId, function(error) {
+      if (error) {
+        res.send(error);
+      } else {
+        likes.save(function(err, user) {
+          if (err) console.log(err);
+        })
+            res.json(likes);
+            res.send('Beer Liked!');
+        }
+    })
+})
+
 module.exports = router;
