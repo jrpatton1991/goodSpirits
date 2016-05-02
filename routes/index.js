@@ -2,6 +2,8 @@ var express = require('express');
 var passport = require('passport');
 var User = require('../models/user');
 var router = express.Router();
+var Likes = require('../models/likes');
+var mongoose = require('mongoose');
 
 /* login authentication function */
 function isLoggedIn(req, res, next) {
@@ -66,15 +68,12 @@ router.post('/likes', function(req, res, next) {
   var beerId = req.params.id;
   console.log(userId);
   var likes = new Likes({ userId: userId });
-    Likes.insert(likes, beerId, function(error) {
+    likes.save(likes, beerId, function(error) {
       if (error) {
         res.send(error);
       } else {
-        likes.save(function(err, user) {
-          if (err) console.log(err);
-        })
-            res.json(likes);
-            res.send('Beer Liked!');
+        res.json(likes);
+        res.send('Beer Liked!');
         }
     })
 })
