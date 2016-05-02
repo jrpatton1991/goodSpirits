@@ -1,3 +1,5 @@
+
+
 //global vars
 var beerName = [];
 var beerId = [];
@@ -85,3 +87,5 @@ function setEventForLike(){
     // }
   })
 }
+
+
