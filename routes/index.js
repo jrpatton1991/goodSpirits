@@ -73,8 +73,8 @@ router.post('likes/:id', isLoggedIn, function(req, res, next) {
         likes.save(function(err, user) {
           if (err) console.log(err);
         })
-            res.json(likes);
-            res.send('Beer Liked!');
+          res.json(likes);
+          res.send('Beer Liked!');
         }
     })
 })
