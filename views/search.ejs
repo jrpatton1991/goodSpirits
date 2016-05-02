@@ -3,9 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>GoodSpirits | Search</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
 </head>
 <body>
-  <form>
+
+  <header>
+      <div>
+        <ul id='mainheader'>
+          <li class='headerlinks' id='homelink'><a href="/">Home</a></li>
+          <li class='headerlinks' id='signuplink'><a href="/signup">Sign Up</a></li>
+          <li class='headerlinks' id='loginlink'><a href="/login">Log In</a></li>
+        </ul>
+      </div>
+  </header>
+
+  <form id='searchbar'>
     <input type='text' id='searchForBeer' name="search" placeholder='Search...'>
   </form>
   <ul id='beerList'>

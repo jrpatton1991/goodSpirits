@@ -26,13 +26,13 @@ function updateBeerList(){
   }
   console.log(searchedBeers)
 
-  $('ul').html(null)
+  $('#beerList').html(null)
   listArr(searchedBeers)
 }
 function listArr(list){
   console.log(list[0]);
   for(i = 0; i < list.length; i++){
-    $('ul').append('<li>' + list[i] + '</li>');
+    $('#beerList').append('<li>' + list[i] + '</li>');
   };
 }
 
