@@ -6,11 +6,10 @@ $(document).ready(function() {
   //ajax call to get the list of beers
   getBeers();
   // keypress event listener for search
-  $('#searchForBeer').keypress(function(e){
+  $('#searchForBeer').keyup(function(e){
     console.log('good')
     updateBeerList();
   });
-
 });
 
 function updateBeerList(){
@@ -29,6 +28,7 @@ function updateBeerList(){
   $('ul').html(null)
   listArr(searchedBeers)
 }
+
 function listArr(list){
   console.log(list[0]);
   for(i = 0; i < list.length; i++){
@@ -40,6 +40,7 @@ function listArr(list){
 
 
 function getBeers(){
+  $('ul').html('loading...');
   $.ajax({
     url: '/drinks/beers',
     method:'get',
@@ -49,7 +50,10 @@ function getBeers(){
     for( var i = 0; i < data.length; i++){
       beerName.push(data[i].name);
     }
-
+    $('ul').html(null);
+    for(i = 0; i < beerName.length; i++){
+      $('ul').append('<li>' + beerName[i] + '</li>');
+    };
   })
   .fail(function(err, textStatus){
     console.log(err);
