@@ -98,3 +98,11 @@ a {
   margin-top: 5px;
 }
 
+.hidden{
+  display:none;
+}
+
+li:hover .hidden{
+  display:inline-block;
+  color:black;
+}
