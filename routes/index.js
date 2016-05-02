@@ -61,7 +61,7 @@ router.post('/signup', function(req, res, next){
 });
 
 /* Post Likes */
-router.post('/likes/:id', function(req, res, next) {
+router.post('/likes', function(req, res, next) {
   var userId = req.user._id;
   var beerId = req.params.id;
   console.log(userId);
