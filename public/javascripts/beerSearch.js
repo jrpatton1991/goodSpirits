@@ -7,32 +7,32 @@ $(document).ready(function() {
   getBeers();
   // keypress event listener for search
   $('#searchForBeer').keyup(function(e){
-    console.log('good')
+    console.log('good');
     updateBeerList();
   });
 });
 
 function updateBeerList(){
   string = $('#searchForBeer').val();
-  var newRegexpSearch = new RegExp(string, 'gi')
+  var newRegexpSearch = new RegExp(string, 'gi');
   //searchedBeers = beerName;
   var searchedBeers = [];
   for (var i = 0, j = 0; i < beerName.length; i++) {
     if (beerName[i].match(new RegExp(string, "gi"))){
-      searchedBeers[j] = beerName[i]
+      searchedBeers[j] = beerName[i];
       j++;
     }
   }
-  console.log(searchedBeers)
+  console.log(searchedBeers);
 
-  $('#beerList').html(null)
-  listArr(searchedBeers)
+  $('#beerList').html(null);
+  listArr(searchedBeers);
 }
 function listArr(list){
   console.log(list[0]);
   for(i = 0; i < list.length; i++){
     $('#beerList').append('<li>' + list[i] + '</li>');
-  };
+  }
 }
 
 
@@ -50,9 +50,9 @@ function getBeers(){
     $('#beerList').html(null);
     for(i = 0; i < beerName.length; i++){
       $('#beerList').append('<li>' + beerName[i] + '</li>');
-    };
+    }
   })
   .fail(function(err, textStatus){
     console.log(err);
-  })
+  });
 }
