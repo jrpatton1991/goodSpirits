@@ -74,3 +74,12 @@ a {
   width: 45px;
   text-align: center;
 }
+
+.hidden{
+  display:none;
+}
+
+li:hover .hidden{
+  display:inline-block;
+  color:black;
+}

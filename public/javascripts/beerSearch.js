@@ -24,8 +24,6 @@ function updateBeerList(){
       j++;
     }
   }
-  console.log(searchedBeers)
-
   $('ul').html(null)
   listArr(searchedBeers)
 }
@@ -33,7 +31,7 @@ function updateBeerList(){
 function listArr(list){
   console.log(list[0]);
   for(i = 0; i < list.length; i++){
-    $('ul').append('<li>' + list[i] + ' <a href="/likes/' + beerId[i] + '" >Like!</a></li>'  );
+    $('ul').append('<li>' + list[i] + ' <a class="hidden button" href="/likes/' + beerId[i] + '" >Like!</a></li>'  );
   };
 }
 
@@ -51,7 +49,7 @@ function getBeers(){
     }
     $('ul').html(null);
     for(i = 0; i < beerName.length; i++){
-      $('ul').append('<li>' + beerName[i] + ' <a href="/likes/' + beerId[i] + '" >Like!</a></li>');
+      $('ul').append('<li>' + beerName[i] + ' <a class="hidden button" href="/likes/' + beerId[i] + '" >Like!</a></li>');
     };
   })
   .fail(function(err, textStatus){
