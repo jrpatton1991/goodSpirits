@@ -63,19 +63,19 @@ router.post('/signup', function(req, res, next){
 });
 
 /* Post Likes */
-router.post('/likes', function(req, res, next) {
-  var userId = req.user._id;
-  var beerId = req.params.id;
-  console.log(userId);
-  var likes = new Likes({ userId: userId });
-    likes.save(likes, beerId, function(error) {
-      if (error) {
-        res.send(error);
-      } else {
-        res.json(likes);
-        res.send('Beer Liked!');
-        }
-    })
-})
+// router.post('/likes', function(req, res, next) {
+//   var userId = req.user._id;
+//   var beerId = req.params.id;
+//   console.log(userId);
+//   var likes = new Likes({ userId: userId });
+//     likes.save(likes, beerId, function(error) {
+//       if (error) {
+//         res.send(error);
+//       } else {
+//         res.json(likes);
+//         res.send('Beer Liked!');
+//         }
+//     })
+// })
 
 module.exports = router;
