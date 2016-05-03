@@ -1,6 +1,6 @@
 $(document).ready(function(){
 $.ajax({
-  url:'/drinks/beers',
+  url:'/likes/user',
   method:'GET',
   dataType:'JSON'
 })
