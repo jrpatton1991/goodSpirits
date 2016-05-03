@@ -62,6 +62,32 @@ router.post('/signup', function(req, res, next){
   });
 });
 
+
+router.get('/beer/:id', function(req, res, next) {
+  var beerId = req.params.id;
+
+  Likes.find({ "beerId": beerId }, function(error, data) {
+    var nameList = [];
+
+    for (var i = 0; i < data.length; i++) {
+       console.log(" user data: " +data[0].userId);
+       var userId = data[i].userId;
+      User.find({'_id': data[i].userId}, function (err, foundById) {
+        console.log(" id username: " + foundById);
+        nameList.push(foundById);
+      })
+    }
+    while( data.length !== nameList.length){
+      console.log(nameList);
+    res.render('beer', {users: nameList})
+    }
+
+
+})
+});
+
+
+
 /* Post Likes */
 // router.post('/likes', function(req, res, next) {
 //   var userId = req.user._id;
