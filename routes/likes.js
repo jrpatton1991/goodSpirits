@@ -42,8 +42,12 @@ router.get('/beer/:id', function(req, res, next) {
   var beerId = req.params.id;
 
   Likes.find({ "beerId": beerId }, function(error, data) {
+    for (var i = 0; i <= data.length; i++) {
+    data[i]
+  console.log(data[i]);
 
-  res.send(data)
+}
+ res.send(data)
 })
 });
 

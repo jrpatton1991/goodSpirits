@@ -1,6 +1,6 @@
 $(document).ready(function(){
  getBeer();
- getLikes();
+ // getLikes();
 
 
  }
@@ -13,17 +13,14 @@ function getBeer() {
     url: '/beer/:id',
     type: 'GET',
     dataType: 'JSON',
-    data: {param1: ''},
+    // data: {param1: ''},
   })
   .done(function() {
-    console.log("success");
+    console.log(data);
   })
   .fail(function() {
     console.log("error");
   })
-  .always(function() {
-    console.log("complete");
-  });
 
 }
 
@@ -32,7 +29,7 @@ function getBeer() {
 function getLikes() {
 //Likes from our own DB
   $.ajax({
-    url: 'user/',
+    url: '/user',
     type: 'GET',
     dataType: 'JSON',
     data: {id: userId , beerId: beerId },
