@@ -13,7 +13,7 @@ router.post('/', function(req, res, next) {
   var likes = new Likes({ userId: userId, beerId: beerId, username: username });
 
   Likes.find({ "userId": userId, "beerId": beerId }, function(error, data) {
-    // console.log(data);
+    console.log(data);
     console.log(error);
     if (data.length === 0) {
      likes.save(likes, function(error) {
@@ -33,6 +33,15 @@ router.get('/user', function(req, res, next) {
   var userId = req.user._id;
 
   Likes.find({ "userId": userId }, function(error, data) {
+
+  res.send(data)
+})
+});
+
+router.get('/beer/:id', function(req, res, next) {
+  var beerId = req.params.id;
+
+  Likes.find({ "beerId": beerId }, function(error, data) {
 
   res.send(data)
 })

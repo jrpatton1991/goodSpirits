@@ -39,6 +39,7 @@ function listArr(list){
     $('#beerList').append('<li>' + list[i] + ' <button class="hidden button" data-id="' + beerId[i] + '">Like!</button></li>'  );
 
   };
+  setEventForLike();
 }
 
 
