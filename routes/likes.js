@@ -11,8 +11,9 @@ router.post('/', function(req, res, next) {
   var beerId = req.params.id;
   var likes = new Likes({ userId: userId, beerId: beerId });
 
-  Likes.findOne({ "userId": userId, "beerId": beerId }, function(error, data) {
+  Likes.find({ "userId": userId, "beerId": beerId }, function(error, data) {
     console.log(data);
+    console.log(error);
     if (data.length == 0) {
      likes.save(likes, function(error) {
        if (error) {
