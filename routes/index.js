@@ -4,6 +4,7 @@ var User = require('../models/user');
 var router = express.Router();
 var Likes = require('../models/likes');
 var mongoose = require('mongoose');
+var Likes = require('../models/likes');
 
 /* login authentication function */
 function isLoggedIn(req, res, next) {
@@ -31,6 +32,10 @@ router.post('/login', passport.authenticate('local'),function(req, res, err) {
 
 /* GET profile page. */
 router.get('/profile', isLoggedIn, function(req, res, next) {
+  Likes.find({ "userId": userId }, function(error, data) {
+
+  res.send(data)
+})
   res.render('profile', {"userId":req.user.username});
 });
 

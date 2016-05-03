@@ -47,4 +47,13 @@ router.get('/beer/:id', function(req, res, next) {
 })
 });
 
+router.get('/user/:id', function(req, res, next) {
+  var userId = req.params.id;
+
+  Likes.find({ "userId": userId }, function(error, data) {
+
+  res.send(data)
+})
+});
+
 module.exports = router;
