@@ -9,21 +9,22 @@ var mongoose = require('mongoose');
 router.post('/', function(req, res, next) {
   var userId = req.user._id;
   var beerId = req.params.id;
-  console.log(userId);
   var likes = new Likes({ userId: userId, beerId: beerId });
-    likes.save(likes, function(error) {
-      if (error) {
+
+  Likes.findOne({ "userId": userId, "beerId": beerId }, function(error, data) {
+    console.log(data);
+    if (data.length == 0) {
+     likes.save(likes, function(error) {
+       if (error) {
         res.send(error);
-      } else {
+       } else {
         res.json(likes);
-        res.send('Beer Liked!');
-        }
-    });
+      }
+    })
+    }else {
+       console.log('NO!');
+    }
+  })
 });
-
-// var liked = req.user._id;
-
-// liked.find({ userId: userId, beerId: beerId });
-
 
 module.exports = router;
