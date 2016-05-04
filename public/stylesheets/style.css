@@ -1,5 +1,8 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("http://www.mackinnonphotography.com/wp-content/uploads/galleries/post-214/full/DSC_8575.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -17,7 +20,7 @@ a {
     /*min-height: 60px;
     line-height: 60px;*/
     color: #fff;
-    background: #FF9900;
+    background: #F5801A;
     font-family: Helvetica, Arial, sans-serif;
     z-index: 99998;
     font-family:'Indie Flower', cursive;
@@ -35,7 +38,7 @@ a {
 
 #logo {
   padding: 80px;
-  background: #ECF0F1;
+  background: none;
   width: 90%;
   height: 80px;
   top: 0;
@@ -94,6 +97,12 @@ a {
   font-size: 130px;
   text-align: center;
   margin-top: 5px;
+  color: #F5801A;
+}
+
+#tagline{
+  color:#F5801A;
+  size: 100px;
 }
 
 .hidden{
