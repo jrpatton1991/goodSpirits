@@ -14,7 +14,7 @@ router.get('/users/:id', function(req, res, next) {
   var userId = req.params.id;
   User.find({ "_id": userId }, function(error, data) {
     console.log(data);
-    res.json(data);
+    res.json(data[0]);
   })
 });
 
