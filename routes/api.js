@@ -12,7 +12,8 @@ var request = require('request');
 /* GET profile page. */
 router.get('/users/:id', function(req, res, next) {
   var userId = req.params.id;
-  Likes.find({ "userId": userId }, function(error, data) {
+  User.find({ "_id": userId }, function(error, data) {
+    console.log(data);
     res.json(data);
   })
 });
@@ -49,6 +50,7 @@ router.post('/likes', function(req, res, next) {
        if (error) {
         res.send(error);
        } else {
+        console.log(likes);
         res.json(likes);
       }
     })
@@ -77,6 +79,13 @@ router.get('/me', function(req, res, next) {
   res.json(data);
 })
 });
+
+router.get('/likes/beers/:id', function(req, res, next) {
+  var beerId = req.params.id;
+  Likes.find({"beerId": beerId}, function(err, data) {
+    res.json(data);
+  })
+})
 
 
 module.exports = router;
