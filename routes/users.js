@@ -13,14 +13,15 @@ function isLoggedIn(req, res, next) {
   }
 }
 
-
 /* GET profile page. */
 router.get('/profile', isLoggedIn, function(req, res, next) {
-  var userId = req.user._id;
-  Likes.find({ "userId": userId }, function(error, data) {
   res.render('profile', {"userId":req.user.username});
-  })
 });
+
+router.get('/:id', function(req, res, next) {
+  res.render('user');
+})
+
 
 
 module.exports = router;

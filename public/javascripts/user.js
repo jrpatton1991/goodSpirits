@@ -7,12 +7,16 @@ getLikes();
 
 
 function getLikes(){
+  var userId = window.location.pathname.split('/');
+  userId = userId[userId.length - 1];
+  console.log(userId);
   $.ajax({
-  url:'/api/me',
+  url:'/api/likes/users/' + userId,
   method:'GET',
   dataType:'JSON'
   })
   .done(function(data, textStatus){
+    console.log(data);
     getBeers(data)
   })
   .fail(function(data, textStatus){
@@ -21,7 +25,6 @@ function getLikes(){
 }
 
 function getBeers(arrLikes){
-
 
   for (var i = 0; i < arrLikes.length; i++) {
     $.ajax({
