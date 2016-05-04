@@ -1,11 +1,11 @@
 var listOfPeople = [];
-
-$(document).ready(function() {
-
 var beerId = window.location.pathname.split('/');
   beerId = beerId[beerId.length - 1];
 
+$(document).ready(function() {
+
 getUsers(beerId);
+getBeerInfo();
 
 });
 
@@ -25,7 +25,8 @@ function getUsers(beerId){
 }
 
 function getUserNames(likes) {
-  var userId = likes[0].userId;
+  for(i = 0; i < likes.length; i++){
+  var userId = likes[i].userId;
   $.ajax({
     url: '/api/users/' + userId,
     method: 'GET',
@@ -33,8 +34,36 @@ function getUserNames(likes) {
   })
   .done(function(data, textStatus){
     listOfPeople.push(data);
+    $('#usersList').html(null);
+    listUsers()
   })
   .fail(function(data, textStatus){
     console.log("ERROR getting likes. status: " + textStatus);
   });
 }
+}
+
+function getBeerInfo() {
+  $.ajax({
+    url: '/api/beers/' + beerId,
+    method: "GET",
+    JSON: 'JSON'
+  })
+  .done(function(data, textStatus){
+    getBeerImg(data)
+    $('#beerheader').text(data.name);
+  })
+  .fail(function(data, textStatus){
+    console.log("ERROR getting likes. status: " + textStatus);
+  });
+}
+
+function getBeerImg(beerInfo) {
+  $('#beerimg').attr('src', beerInfo.image_thumb_url);
+}
+
+function listUsers(){
+  for(i = 0; i < listOfPeople.length; i++){
+    $('#usersList').append('<li>' + listOfPeople[i].username + '</li>');
+  }
+};
