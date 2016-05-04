@@ -1,5 +1,7 @@
+ var beerList = [];
 $(document).ready(function(){
 getLikes();
+
 
 });
 
@@ -19,18 +21,20 @@ function getLikes(){
 }
 
 function getBeers(arrLikes){
-  var beerList = [];
 
-  $.ajax({
-  url:'/api/beers/' + arrLikes[0].beerId,
-  method:'GET',
-  dataType:'JSON'
-  })
-  .done(function(data, textStatus){
-    console.log(data);
-  })
-  .fail(function(data, textStatus){
-    console.log(data)
-    console.log("ERROR getting beers. status: " + textStatus);
-  });
+
+  for (var i = 0; i < arrLikes.length; i++) {
+    $.ajax({
+    url:'/api/beers/' + arrLikes[i].beerId,
+    method:'GET',
+    dataType:'JSON'
+    })
+    .done(function(data, textStatus){
+      beerList.push(data);
+    })
+    .fail(function(data, textStatus){
+      console.log(data)
+      console.log("ERROR getting beers. status: " + textStatus);
+    });
+  }
 }
