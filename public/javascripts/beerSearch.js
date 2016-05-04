@@ -32,6 +32,7 @@ function updateBeerList(){
   $('#beerList').html(null)
   listArr(searchedBeers)
 }
+
 function listArr(list){
   console.log(list[0]);
   for(i = 0; i < list.length; i++){
