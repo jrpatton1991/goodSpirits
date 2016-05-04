@@ -31,6 +31,8 @@ function getBeers(arrLikes){
     })
     .done(function(data, textStatus){
       beerList.push(data);
+      $("#beerlikes").html(null);
+      listLikes();
     })
     .fail(function(data, textStatus){
       console.log(data)
@@ -39,4 +41,8 @@ function getBeers(arrLikes){
   }
 }
 
-
+function listLikes(){
+  for(i = 0; i < beerList.length; i++){
+    $('#beerlikes').append('<li>' + beerList[i].name + '</li>');
+  }
+};
