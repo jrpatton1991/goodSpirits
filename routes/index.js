@@ -58,4 +58,8 @@ router.post('/signup', function(req, res, next){
   });
 });
 
+router.get('/beers/:id', function(req, res, next) {
+  res.render('beer');
+})
+
 module.exports = router;
