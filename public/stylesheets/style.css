@@ -109,6 +109,13 @@ a {
   font-family: 'Playball', cursive;
 }
 
+.navbar-right{
+  margin: 15px 15px 15px 15px;
+  background-color: transparent;
+  width: 4%;
+
+}
+
 .hidden{
   display:none;
 }
