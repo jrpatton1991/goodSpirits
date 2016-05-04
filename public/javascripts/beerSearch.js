@@ -58,7 +58,7 @@ function getBeers(){
     }
     $('#beerList').html(null);
     for(i = 0; i < beerName.length; i++){
-      $('#beerList').append('<li>' + beerName[i] + ' <button class="hidden button" data-id="' + beerId[i] + '">Like!</button></li>');
+      $('#beerList').append('<li><a href="/beers/' + beerId[i] + '" >' + beerName[i] + '</a><button class="hidden button" data-id="' + beerId[i] + '">Like!</button></li>');
     };
     // event listener for like btns
     setEventForLike();
@@ -89,5 +89,7 @@ function setEventForLike(){
     // }
   })
 }
+
+
 
 

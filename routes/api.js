@@ -80,6 +80,7 @@ router.get('/me', function(req, res, next) {
 })
 });
 
+//Get Who Likes Individual Beer
 router.get('/likes/beers/:id', function(req, res, next) {
   var beerId = req.params.id;
   Likes.find({"beerId": beerId}, function(err, data) {
@@ -87,5 +88,12 @@ router.get('/likes/beers/:id', function(req, res, next) {
   })
 })
 
+//Get likes of individual user
+router.get('/likes/users/:id', function(req, res, next) {
+  var userId = req.params.id;
+  Likes.find({"userId": userId}, function(err, data) {
+    res.json(data);
+  })
+})
 
 module.exports = router;
