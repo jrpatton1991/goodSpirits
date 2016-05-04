@@ -46,7 +46,7 @@ function listArr(list){
 function getBeers(){
   $('#beerList').html('loading...');
   $.ajax({
-    url: '/drinks/beers',
+    url: '/api/beers',
     method:'get',
     dataType:'json'
   })
@@ -74,7 +74,7 @@ function setEventForLike(){
     console.log('working');
     // function postLikes(){
       $.ajax({
-        url: '/likes',
+        url: '/api/likes',
         method:'POST',
         dataType:'json',
         data:{ id : beerId }

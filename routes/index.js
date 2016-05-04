@@ -27,17 +27,8 @@ router.get('/login', function(req, res, next) {
 
 router.post('/login', passport.authenticate('local'),function(req, res, err) {
     console.log(err);
-   res.redirect('/profile');
+   res.redirect('users/profile');
   });
-
-/* GET profile page. */
-router.get('/profile', isLoggedIn, function(req, res, next) {
-  Likes.find({ "userId": userId }, function(error, data) {
-
-  res.send(data)
-})
-  res.render('profile', {"userId":req.user.username});
-});
 
 /* GET search page. */
 router.get('/search', function(req, res, next) {
@@ -60,27 +51,11 @@ router.post('/signup', function(req, res, next){
         if (loginError) {
           res.send(loginError);
         } else {
-          res.redirect('/profile');
+          res.redirect('/users/profile');
         }
       });
     }
   });
 });
-
-/* Post Likes */
-// router.post('/likes', function(req, res, next) {
-//   var userId = req.user._id;
-//   var beerId = req.params.id;
-//   console.log(userId);
-//   var likes = new Likes({ userId: userId });
-//     likes.save(likes, beerId, function(error) {
-//       if (error) {
-//         res.send(error);
-//       } else {
-//         res.json(likes);
-//         res.send('Beer Liked!');
-//         }
-//     });
-// });
 
 module.exports = router;
