@@ -8,7 +8,7 @@ body {
 
 a {
   color: white;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 #mainheader {
@@ -22,7 +22,6 @@ a {
     line-height: 60px;*/
     color: #fff;
     background: #03497E;
-    font-family: Helvetica, Arial, sans-serif;
     z-index: 99998;
     font-family:'Indie Flower', cursive;
 
@@ -60,6 +59,7 @@ a {
   background: #000;
   padding: 10px 10px 10px 10px;
   text-align: center;
+  text
 }
 
 #signuplink:hover{
@@ -69,7 +69,7 @@ a {
 }
 
 #searchlink:hover{
-    background: #000;
+  background: #000;
   padding: 10px 10px 10px 10px;
   text-align: center;
 }
@@ -124,11 +124,9 @@ li:hover .hidden{
 }
 
 address{
-
   color: #FE4B28;
   text-align: center;
   padding: 10px;
   font-size: 20px;
-
-
+  font-family: 'Playball', cursive;
 }
