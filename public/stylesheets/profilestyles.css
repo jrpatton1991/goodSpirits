@@ -77,6 +77,14 @@ body {
       margin-top: 100px;
     }
 
+    .maincontent h1 {
+      display:inline-block;
+    }
+
+    #logoutlink {
+      display: inline-block;
+    }
+
 
     /*.hidden{
       display:none;
