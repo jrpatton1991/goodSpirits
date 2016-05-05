@@ -1,10 +1,9 @@
-#loginh1 {
+
+#signupheader {
   font-size: 40px;
   margin-top: 80px;
   margin-left: 15px;
-  color: #FE4B28;
 }
-
 
 #loginbutton {
   width: 200px;
@@ -12,7 +11,6 @@
   font-size: 15px;
   background-color: white;
   margin-top: 15px;
-  /*float: left;*/
   border: 2px solid #FE4B28;
   border-radius: 10px;
 }
@@ -24,9 +22,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  /*height: 100vh;*/
-  /*background: url("http://i.imgur.com/HgflTDf.jpg") 50% fixed;*/
-  /*background-size: cover;*/
+  font-color: #0596D5;
 }
 
 .title {
@@ -67,7 +63,16 @@ body {
     height: 5px;
 }
 
-.login {
+#email {
+    border-radius: 10px;
+    border: 2px solid #FE4B28;
+    padding: 20px;
+    width: 200px;
+    height: 5px;
+    margin-top: 10px;
+}
+
+.signup {
 
   border-radius: 2px 2px 5px 5px;
   padding: 10px 20px 20px 20px;

@@ -1,15 +1,18 @@
 <% include ./partials/header %>
 <% include ./partials/signuppartial %>
 
-  <section class="maincontent">
-    <p>This is the Sign Up Page</p>
-    <form action="/signup" method='post'>
-      <input type="text" name="username" placeholder="Username">
-      <input type="text" name="password" placeholder="Password">
-      <input type="text" name="email" placeholder="Email">
-      <input type="submit" value="Submit">
-    </form>
-  </section>
+<h1 id="signupheader">Sign up to be part of the GoodSpirits community.</h1>
 
-<script src="../javascripts/script.js"></script>
+  <div class="wrapper">
+    <form action="/signup" method='post' class="signup">
+      <p class ="title">Sign Up</p>
+      <input type="text" name="username" placeholder="Username" id="username"/>
+      <input type="text" name="password" placeholder="Password" id="password"/>
+      <input type="text" name="email" placeholder="Email" id="email"/>
+      <button id="loginbutton">
+      <span class="state">Sign Up!</span>
+    </form>
+  </div>
+
+<!-- <script src="../javascripts/script.js"></script> -->
 <% include ./partials/footer %>
