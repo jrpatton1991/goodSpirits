@@ -1,0 +1,16 @@
+.maincontent {
+  margin-top: 100px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+#beerlikes {
+  border: 2px solid black;
+  list-style: none;
+}
+
+li {
+  border: 1px solid black;
+}
