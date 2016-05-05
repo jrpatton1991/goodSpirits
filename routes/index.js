@@ -5,6 +5,7 @@ var router = express.Router();
 var Likes = require('../models/likes');
 var mongoose = require('mongoose');
 var Likes = require('../models/likes');
+var Logout = require('../models/user');
 
 /* login authentication function */
 function isLoggedIn(req, res, next) {
@@ -60,6 +61,10 @@ router.post('/signup', function(req, res, next){
 
 router.get('/beers/:id', function(req, res, next) {
   res.render('beer');
-})
+});
+router.get('/logout', function (req,res,next){
+    res.redirect('/');
+
+});
 
 module.exports = router;
