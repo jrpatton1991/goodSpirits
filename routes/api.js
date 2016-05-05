@@ -39,8 +39,8 @@ router.get('/beers', function(req,res,next){
 router.post('/likes', function(req, res, next) {
   var userId = req.user._id;
   var beerId = req.body.id;
-  var username = req.user.username;
-  var likes = new Likes({ userId: userId, beerId: beerId, username: username });
+  var review = req.body.review;
+  var likes = new Likes({ userId: userId, beerId: beerId, review:review });
 
   Likes.find({ "userId": userId, "beerId": beerId }, function(error, data) {
     console.log(data);
