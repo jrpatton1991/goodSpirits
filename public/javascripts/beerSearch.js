@@ -95,6 +95,6 @@ function setEventForLike(){
 }
 
 function appendToList(id , name){
-  var textArea = '<div  class="showOnClick hidden" ><textarea class="comment-box" name="textarea" rows="7" cols="25" placeholder="Write a quick review here"></textarea> <button class="submit-review"  data-id="' + id + '" >Submit Review</button> </div>'
-  $('#beerList').append('<li><a href="/beers/' + id + '" >' + name + '</a><button class="hidden button" data-id="' + id + '">Like!</button> ' + textArea + '</li>');
+  var textArea = '<div  class="showOnClick hideOnLoad" ><textarea class="comment-box" name="textarea" rows="7" cols="25" placeholder="Write a quick review here"></textarea> <button class="submit-review"  data-id="' + id + '" >Submit Review</button> </div>'
+  $('#beerList').append('<li><a href="/beers/' + id + '" >' + name + '</a><button class="hideOnLoad button" data-id="' + id + '">Like!</button> ' + textArea + '</li>');
 }
