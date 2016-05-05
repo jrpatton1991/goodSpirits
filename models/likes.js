@@ -3,7 +3,8 @@ var mongoose = require('mongoose'),
 
     var Likes = new Schema({
       userId: {type: String},
-      beerId: {type: String}
+      beerId: {type: String},
+      review: {type:String}
     });
 
 
