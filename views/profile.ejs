@@ -1,23 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>GoodSpirits | Profile</title>
-    <link rel='stylesheet' href='/stylesheets/profilestyles.css' />
-    <link rel="icon"
-      type="image/png"
-      href="http://megaicons.net/static/img/icons_sizes/356/983/32/food-duff-beer-icon.png"/>
-  </head>
-  <body>
-
-    <header>
-      <div>
-        <ul id='mainheader'>
-          <li class='headerlinks' id='homelink'><a href="/">Home</a></li>
-        <!--   <li class='headerlinks' id='signuplink'><a href="/signup">Login</a></li> -->
-          <li class='headerlinks' id='searchlink'><a href="/search">Search</a></li>
-        </ul>
-      </div>
-    </header>
+<% include ./partials/header %>
+<% include ./partials/profilepartial %>
 
     <section class="maincontent">
     <h1> Welcome <%= userId %></h1>
@@ -28,8 +10,6 @@
 
     </section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
-  <script src="../javascripts/profile.js"></script>
 
-  </body>
-</html>
+<script src="../javascripts/profile.js"></script>
+<% include ./partials/footer %>

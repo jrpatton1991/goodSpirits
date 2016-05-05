@@ -1,37 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>GoodSpirits | Login </title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/login.css' />
-    <link rel="icon"
-      type="image/png"
-      href="http://megaicons.net/static/img/icons_sizes/356/983/32/food-duff-beer-icon.png"/>
-  </head>
-  <body>
-
-    <header>
-      <div>
-        <ul id='mainheader'>
-          <li class='headerlinks' id='homelink'><a href="/">Home</a></li>
-          <li class='headerlinks' id='signuplink'><a href="/signup">Sign Up</a></li>
-          <li class='headerlinks' id='searchlink'><a href="/search">Search</a></li>
-        </ul>
-      </div>
-    </header>
+<% include ./partials/header %>
+<% include ./partials/loginpartial %>
 
   <section class="maincontent">
-    <h1> GoodSpirits </h1>
-    <p> Log In page</p>
-    <form action="/login" method='post' >
-      <input type="text" name="username" placeholder="Username">
-      <input type="password" name="password" placeholder="Password">
-     <input type="submit" value="Submit">
-    </form>
-  </section>
+    <h1> Welcome back to GoodSpirits! </h1>
+    <p> </p>
+
+  <div class="wrapper">
+  <form action="/login" method='post' class="login" >
+    <p class="title">Log in</p>
+    <input type="text" name="username" placeholder="Username" id="username"/>
+    <input type="password" name="password" placeholder="Password" id="password"/>
+    <button id="loginbutton">
+      <span class="state">Log in</span>
+    </button>
+  </form>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
-  <script src="../javascripts/script.js"></script>
-  </body>
-</html>
+<% include ./partials/footer %>

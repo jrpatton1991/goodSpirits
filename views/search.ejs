@@ -1,25 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>GoodSpirits | Search</title>
-  <link rel='stylesheet' href='/stylesheets/search.css' />
-  <link rel="icon"
-      type="image/png"
-      href="http://megaicons.net/static/img/icons_sizes/356/983/32/food-duff-beer-icon.png"/>
-</head>
-<body>
-
-    <header>
-      <div>
-        <ul id='mainheader'>
-          <li class='headerlinks' id='homelink'><a href="/">Home</a></li>
-          <li class='headerlinks' id='signuplink'><a href="/signup">Sign Up</a></li>
-          <li class='headerlinks' id='searchlink'><a href="/search">Search</a></li>
-          <li class='headerlinks' id='profilelink'><a href="users/profile">Profile</a></li>
-        </ul>
-      </div>
-    </header>
+<% include ./partials/header %>
+<% include ./partials/searchpartial %>
 
   <section class="maincontent">
       <form>
@@ -29,7 +9,6 @@
 
       </ul>
   </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+
   <script src="../javascripts/beerSearch.js"></script>
-</body>
-</html>
+<% include ./partials/footer %>
