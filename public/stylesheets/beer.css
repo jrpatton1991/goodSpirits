@@ -2,7 +2,7 @@
   color: #FE4B28;
   font-family: 'Dancing Script', cursive;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 60px;
 }
 
@@ -10,19 +10,10 @@ body{
   background-color: #D4D4D4;
 }
 
-a{
-  color: #03497E;
-}
-
-a:hover{
-  text-decoration: none;
-  color: #FE4B28;
-}
-
 img {
-  width: 100%;
+  position: relative;
+  left: 125px;
   max-width: 200px;
-  text-align: center;
   margin: 2px 0px 0px 500px;
   padding: 20px;
 }
@@ -50,11 +41,17 @@ ul {
 .well {
   background-color: #0596D5;
   color: white;
+  width: 400px;
+  text-align: center;
  /* margin: 1px 1px;*/
  }
 
  a {
   color: white;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 25px;
+}
+
+a:hover {
+  color: #24D560;
 }

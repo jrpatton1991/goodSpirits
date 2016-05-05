@@ -1,35 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>GoodSpirits | Profile</title>
-    <link rel='stylesheet' href='/stylesheets/profilestyles.css' />
-    <link rel="icon"
-      type="image/png"
-      href="http://megaicons.net/static/img/icons_sizes/356/983/32/food-duff-beer-icon.png"/>
-  </head>
-  <body>
+<% include ./partials/header %>
+<% include ./partials/profilepartial %>
+<% include ./partials/navBar %>
 
-    <header>
-      <div>
-        <ul id='mainheader'>
-          <li class='headerlinks' id='homelink'><a href="/">Home</a></li>
-        <!--   <li class='headerlinks' id='signuplink'><a href="/signup">Login</a></li> -->
-          <li class='headerlinks' id='searchlink'><a href="/search">Search</a></li>
-        </ul>
+
+<div class="container">
+  <section class="maincontent">
+    <h1> Welcome to their page!</h1>
+  </section>
+    <h2 id="subtext">
+      Here are all of the beers they've liked recently:
+    </h2>
+      <div id="beerlikes" class='row'>
       </div>
-    </header>
+</div>
 
-    <section class="maincontent">
-    <h1> </h1>
-
-    <ul id="beerlikes">
-
-    </ul>
-
-    </section>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
-  <script src="../javascripts/user.js"></script>
-
-  </body>
-</html>
+<script src="../javascripts/profile.js"></script>
+<% include ./partials/footer %>
