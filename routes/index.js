@@ -63,7 +63,8 @@ router.get('/beers/:id', function(req, res, next) {
 });
 
 router.get('/logout', function (req,res,next){
-    res.redirect('/');
+  req.logout();
+  res.redirect('/');
 });
 
 
