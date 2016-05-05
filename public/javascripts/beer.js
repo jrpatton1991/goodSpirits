@@ -17,7 +17,7 @@ function getUsers(beerId){
   dataType:'JSON'
   })
   .done(function(data, textStatus){
-    getUserNames(data)
+    getUserNames(data);
   })
   .fail(function(data, textStatus){
     console.log("ERROR getting likes. status: " + textStatus);
@@ -35,7 +35,7 @@ function getUserNames(likes) {
   .done(function(data, textStatus){
     listOfPeople.push(data);
     $('#usersList').html(null);
-    listUsers()
+    listUsers();
   })
   .fail(function(data, textStatus){
     console.log("ERROR getting likes. status: " + textStatus);
@@ -50,7 +50,7 @@ function getBeerInfo() {
     JSON: 'JSON'
   })
   .done(function(data, textStatus){
-    getBeerImg(data)
+    getBeerImg(data);
     $('#beerheader').text(data.name);
   })
   .fail(function(data, textStatus){
@@ -67,4 +67,4 @@ function listUsers(){
     console.log(listOfPeople[i]);
     $('#usersList').append('<li><a href="/users/'+ listOfPeople[i]._id + '">' + listOfPeople[i].username + '</li>');
   }
-};
+}
