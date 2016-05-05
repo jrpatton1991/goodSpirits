@@ -1,10 +1,16 @@
 <% include ./partials/header %>
 <% include ./partials/profilepartial %>
 
-
-<div class="container">
     <section class="maincontent">
-    <h1> Welcome <%= userId %>!</h1>
+    <h1> Welcome <%= userId %></h1>
+    <div id="logoutlink">
+      <a href="/logout">Logout</a>
+    </div>
+
+    <ul id="beerlikes">
+      <li id="beers"></li>
+    </ul>
+
     </section>
     <h2 id="subtext">
       Here are all of the beers you've liked recently:
