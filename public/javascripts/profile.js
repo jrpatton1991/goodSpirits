@@ -43,6 +43,6 @@ function getBeers(arrLikes){
 
 function listLikes(){
   for(i = 0; i < beerList.length; i++){
-    $('#beerlikes').append('<li><a href="/beers/'+beerList[i].id + '">' + beerList[i].name + '</a></li>');
+    $('#beerlikes').append('<div class="well well-sm col-sm-3"><a href="/beers/'+beerList[i].id + '">' + beerList[i].name + '</a></div>');
   }
 };
