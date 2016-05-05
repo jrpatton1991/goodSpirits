@@ -1,26 +1,17 @@
 <% include ./partials/header %>
 <% include ./partials/profilepartial %>
+<% include ./partials/navBar %>
 
-    <section class="maincontent">
-    <h1> Welcome <%= userId %></h1>
-    <div id="logoutlink">
-      <a href="/logout">Logout</a>
-    </div>
 
-    <ul id="beerlikes">
-      <li id="beers"></li>
-    </ul>
-
-    </section>
+<div class="container">
+  <section class="maincontent">
+    <h1> Welcome <%= userId %>!</h1>
+  </section>
     <h2 id="subtext">
       Here are all of the beers you've liked recently:
     </h2>
-  <!--   <div class="row"> -->
       <div id="beerlikes" class='row'>
-
       </div>
-  <!--   </div> -->
-
 </div>
 
 <script src="../javascripts/profile.js"></script>
