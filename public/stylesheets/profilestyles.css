@@ -1,30 +1,25 @@
 body {
-  background-image: url('http://i.imgur.com/VOSKA0R.jpg?1');
-  color:#F5801A;
-
+  background-color:#D4D4D4;
 }
 #mainheader {
     margin-top: 0;
     top: 0;
-    background-color:#F5801A;
     opacity: .40;
   /*left: 0;*/
    width: 150%;
     height: 60px;
     /*min-height: 60px;
     line-height: 60px;*/
+    background-color: blue;
     color: #fff;
     font-family: Helvetica, Arial, sans-serif;
     z-index: 99998
-    font:rgb(255,128,0);
 }
   .headerlinks {
     list-style-type: none;
     display: inline-block;
     padding: 20px 10px;
     margin-left: 60px;
-    font:rgb(255,128,0);
-    color: rgb(255,128,0);
     }
 
     #logo {
