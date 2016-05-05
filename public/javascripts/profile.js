@@ -13,7 +13,7 @@ function getLikes(){
   dataType:'JSON'
   })
   .done(function(data, textStatus){
-    getBeers(data)
+    getBeers(data);
   })
   .fail(function(data, textStatus){
     console.log("ERROR getting likes. status: " + textStatus);
@@ -35,7 +35,7 @@ function getBeers(arrLikes){
       listLikes();
     })
     .fail(function(data, textStatus){
-      console.log(data)
+      console.log(data);
       console.log("ERROR getting beers. status: " + textStatus);
     });
   }
@@ -45,4 +45,4 @@ function listLikes(){
   for(i = 0; i < beerList.length; i++){
     $('#beerlikes').append('<li><a href="/beers/'+beerList[i].id + '">' + beerList[i].name + '</a></li>');
   }
-};
+}

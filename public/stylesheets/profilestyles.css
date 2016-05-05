@@ -1,13 +1,17 @@
 body {
-  background-image: url('http://i.imgur.com/VOSKA0R.jpg?1');
-  color:#F5801A;
-
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color:#9DEBFC;
 }
+h1{
+  color:#FE4B28;
+}
+
 #mainheader {
     margin-top: 0;
     top: 0;
-    background-color:#F5801A;
-    opacity: .40;
+    background-color:#03497E;
   /*left: 0;*/
    width: 150%;
     height: 60px;
