@@ -82,13 +82,11 @@ body {
     }
 
 
-    .hidden{
+    .hideOnLoad{
       display:none;
     }
 
-    li:hover button.hidden{
+    li:hover button.hideOnLoad{
       display:inline-block;
       color:black;
     }
-
-
