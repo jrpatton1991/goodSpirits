@@ -4,13 +4,29 @@
 
 h1 {
   font-size: 40px;
+  padding-bottom: 20px;
 }
 
 #beerlikes {
-  border: 2px solid black;
-  list-style: none;
+  font-size: 15px;
+  text-align: center;
 }
 
-li {
-  border: 1px solid black;
+.well {
+  background-color: #0596D5;
+  color: white;
+ /* margin: 1px 1px;*/
+
 }
+
+a {
+  color: white;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+#subtext {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+

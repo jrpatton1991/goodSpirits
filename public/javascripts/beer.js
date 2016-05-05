@@ -65,6 +65,6 @@ function getBeerImg(beerInfo) {
 function listUsers(){
   for(i = 0; i < listOfPeople.length; i++){
     console.log(listOfPeople[i]);
-    $('#usersList').append('<li><a href="/users/'+ listOfPeople[i]._id + '">' + listOfPeople[i].username + '</li>');
+    $('#usersList').append('<div class="well col-sm-3"><a href="/users/'+ listOfPeople[i]._id + '">' + listOfPeople[i].username + '</div>');
   }
 };

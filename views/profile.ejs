@@ -1,24 +1,21 @@
 <% include ./partials/header %>
 <% include ./partials/profilepartial %>
 
+
+<div class="container">
     <section class="maincontent">
-    <h1> Welcome <%= userId %></h1>
-
-    <ul id="beerlikes">
-      <li id="beers"></li>
-    </ul>
-
+    <h1> Welcome <%= userId %>!</h1>
     </section>
+    <h2 id="subtext">
+      Here are all of the beers you've liked recently:
+    </h2>
+  <!--   <div class="row"> -->
+      <div id="beerlikes" class='row'>
 
-    <div class="card">
-  <img class="card-img-top" data-src="..." alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title">Beer</h4>
-    <li class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="/" class="btn btn-primary">Button</a>
-  </div>
+      </div>
+  <!--   </div> -->
+
 </div>
-
 
 <script src="../javascripts/profile.js"></script>
 <% include ./partials/footer %>

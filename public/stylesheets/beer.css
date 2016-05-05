@@ -7,7 +7,7 @@
 }
 
 body{
-  background-color: #999999;
+  background-color: #D4D4D4;
 }
 
 a{
@@ -45,4 +45,16 @@ ul {
   color: #FE4B28;
   text-decoration: none;
   padding-bottom: 15px;
+}
+
+.well {
+  background-color: #0596D5;
+  color: white;
+ /* margin: 1px 1px;*/
+ }
+
+ a {
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
 }
