@@ -75,7 +75,7 @@ function setEventForLike(){
       console.log('clicked Submit');
       var submitBtn = $(this);
       var beerId = submitBtn.data('id');
-      var textBox = $(this).prev()
+      var textBox = $(this).prev();
       var userReview = textBox.val();
       console.log(userReview);
       $.ajax({
@@ -85,8 +85,9 @@ function setEventForLike(){
         data:{ id : beerId, review: userReview}
       })
       .done(function(data, textStatus){
-        textBox.val(null)
-        submitBtn.attr('disabled', true)
+        textBox.val(null);
+        submitBtn.attr('disabled', true);
+        submitBtn.parent().slideToggle();
       })
       .fail(function(err, textStatus){
         console.log(err);
