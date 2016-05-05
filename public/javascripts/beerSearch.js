@@ -73,8 +73,10 @@ function setEventForLike(){
   })
   $('.submit-review').click(function(){
       console.log('clicked Submit');
-      var beerId = $(this).data('id');
-      var userReview = $(this).prev().val();
+      var submitBtn = $(this);
+      var beerId = submitBtn.data('id');
+      var textBox = $(this).prev()
+      var userReview = textBox.val();
       console.log(userReview);
       $.ajax({
         url: '/api/likes',
@@ -83,7 +85,8 @@ function setEventForLike(){
         data:{ id : beerId, review: userReview}
       })
       .done(function(data, textStatus){
-        console.log(data + " : " + textStatus)
+        textBox.val(null)
+        submitBtn.attr('disabled', true)
       })
       .fail(function(err, textStatus){
         console.log(err);
