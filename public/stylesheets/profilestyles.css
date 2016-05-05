@@ -84,11 +84,10 @@ body {
     }
 
 
-    .hidden{
+    /*.hidden{
       display:none;
     }
-
-    li:hover .hidden{
+    li:hover button.hidden{
       display:inline-block;
       color:black;
-    }
+    }*/

@@ -34,11 +34,8 @@ function updateBeerList(){
 }
 
 function listArr(list){
-  console.log(list[0]);
   for(i = 0; i < list.length; i++){
-
-    $('#beerList').append('<li>' + list[i] + ' <button class="hidden button" data-id="' + beerId[i] + '">Like!</button></li>'  );
-
+    appendToList(beerId[i] , list[i])
   };
   setEventForLike();
 }
@@ -58,7 +55,7 @@ function getBeers(){
     }
     $('#beerList').html(null);
     for(i = 0; i < beerName.length; i++){
-      $('#beerList').append('<li><a href="/beers/' + beerId[i] + '" >' + beerName[i] + '</a><button class="hidden button" data-id="' + beerId[i] + '">Like!</button></li>');
+      appendToList(beerId[i] , beerName[i])
     };
     // event listener for like btns
     setEventForLike();
@@ -71,25 +68,33 @@ function getBeers(){
 //function to add likes to db
 function setEventForLike(){
   $('.button').click(function(e){
-    var beerId = $(this).data('id');
-    console.log('working');
-    // function postLikes(){
+    console.log('clicked');
+    $(this).next().slideToggle();
+  })
+  $('.submit-review').click(function(){
+      console.log('clicked Submit');
+      var submitBtn = $(this);
+      var beerId = submitBtn.data('id');
+      var textBox = $(this).prev()
+      var userReview = textBox.val();
+      console.log(userReview);
       $.ajax({
         url: '/api/likes',
         method:'POST',
         dataType:'json',
-        data:{ id : beerId }
+        data:{ id : beerId, review: userReview}
       })
       .done(function(data, textStatus){
-        console.log(data + " : " + textStatus)
+        textBox.val(null)
+        submitBtn.attr('disabled', true)
       })
       .fail(function(err, textStatus){
         console.log(err);
       })
-    // }
   })
 }
 
-
-
-
+function appendToList(id , name){
+  var textArea = '<div  class="showOnClick hidden" ><textarea class="comment-box" name="textarea" rows="7" cols="25" placeholder="Write a quick review here"></textarea> <button class="submit-review"  data-id="' + id + '" >Submit Review</button> </div>'
+  $('#beerList').append('<li><a href="/beers/' + id + '" >' + name + '</a><button class="hidden button" data-id="' + id + '">Like!</button> ' + textArea + '</li>');
+}
