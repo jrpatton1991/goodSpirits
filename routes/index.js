@@ -18,27 +18,26 @@ function isLoggedIn(req, res, next) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('front_page');
+  res.render('front_page', {loggedIn :req.isAuthenticated(), page:'home'});
 });
 
 /* GET login page. */
 router.get('/login', function(req, res, next) {
-  res.render('login');
+  res.render('login', {loggedIn :req.isAuthenticated(), page:'login'});
 });
 
 router.post('/login', passport.authenticate('local'),function(req, res, err) {
-    console.log(err);
    res.redirect('users/profile');
   });
 
 /* GET search page. */
 router.get('/search', function(req, res, next) {
-  res.render('search');
+  res.render('search', {loggedIn :req.isAuthenticated(), page:'search'});
 });
 
 /* GET signup page. */
 router.get('/signup', function(req, res, next) {
-  res.render('signup');
+  res.render('signup', {loggedIn :req.isAuthenticated(), page:'signUp'});
 });
 
 /* POST signup page */
@@ -60,11 +59,12 @@ router.post('/signup', function(req, res, next){
 });
 
 router.get('/beers/:id', function(req, res, next) {
-  res.render('beer');
+  res.render('beer', {loggedIn :req.isAuthenticated(), page:'beerPage'});
 });
+
 router.get('/logout', function (req,res,next){
     res.redirect('/');
-
 });
+
 
 module.exports = router;
