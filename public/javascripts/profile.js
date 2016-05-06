@@ -8,8 +8,17 @@ getLikes();
 
 
 function getLikes(){
+  var url = ""
+  var urlPathName = window.location.pathname.split('/');
+  urlPathName = urlPathName[urlPathName.length - 1];
+  if (urlPathName == "profile"){
+    url = '/api/me';
+  }else{
+    url = '/api/likes/users/' + urlPathName;
+  }
+  console.log(url);
   $.ajax({
-  url:'/api/me',
+  url: url,
   method:'GET',
   dataType:'JSON'
   })
