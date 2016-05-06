@@ -15,14 +15,13 @@ function isLoggedIn(req, res, next) {
 
 /* GET profile page. */
 router.get('/profile', isLoggedIn, function(req, res, next) {
-  res.render('profile', {"userId":req.user.username});
+  res.render('profile', {"userId":req.user.username, loggedIn :req.isAuthenticated(), page: 'profile'});
 });
 
 router.get('/:id', function(req, res, next) {
-  res.render('user');
+  res.render('user', {loggedIn :req.isAuthenticated(), page: 'singleUser'});
 })
 
 
 
 module.exports = router;
-

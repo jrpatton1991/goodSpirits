@@ -1,4 +1,5 @@
  var beerList = [];
+ var likeList = [];
 $(document).ready(function(){
 getLikes();
 
@@ -13,6 +14,7 @@ function getLikes(){
   dataType:'JSON'
   })
   .done(function(data, textStatus){
+    likeList = data;
     getBeers(data)
   })
   .fail(function(data, textStatus){
@@ -43,6 +45,6 @@ function getBeers(arrLikes){
 
 function listLikes(){
   for(i = 0; i < beerList.length; i++){
-    $('#beerlikes').append('<li><a href="/beers/'+beerList[i].id + '">' + beerList[i].name + '</a></li>');
+    $('#beerlikes').append('<div class="well well-sm col-sm-3"><a href="/beers/'+beerList[i].id + '">' + beerList[i].name + '</a><p>'+ likeList[i].review +'</p></div>');
   }
 };
