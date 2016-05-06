@@ -31,4 +31,6 @@ As a user I'd love a place where I can come and see what drinks i should try nex
 Link to your wireframes – sketches of major views / interfaces in your application
 [link to wireframes][http://imgur.com/a/eZF8a]
 
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/eZF8a"><a href="//imgur.com/a/eZF8a">GoodSpirits Photos</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 Descriptions of any unsolved problems or major hurdles your team had to overcome
