@@ -69,16 +69,13 @@ function getBeers(){
 //function to add likes to db
 function setEventForLike(){
   $('.button').click(function(e){
-    console.log('clicked');
     $(this).next().slideToggle();
   })
   $('.submit-review').click(function(){
-      console.log('clicked Submit');
       var submitBtn = $(this);
       var beerId = submitBtn.data('id');
       var textBox = $(this).prev();
       var userReview = textBox.val();
-      console.log(userReview);
       $.ajax({
         url: '/api/likes',
         method:'POST',
@@ -86,7 +83,6 @@ function setEventForLike(){
         data:{ id : beerId, review: userReview}
       })
       .done(function(data, textStatus){
-        console.log('posted like')
         textBox.val(null);
         submitBtn.attr('disabled', true);
         submitBtn.parent().slideToggle();
