@@ -2,14 +2,19 @@
 <% include ./partials/searchpartial %>
 <% include ./partials/navBar %>
 
+<div class="container">
+  <h2>Search for a beer you like.</h2>
   <section class="maincontent">
       <form>
         <input type='text' id='searchForBeer' name="search" placeholder='Search...'>
       </form>
-      <ul id='beerList'>
+
+      <div id="beerList" class='row'>
+      </div>
 
       </ul>
   </section>
+</div>
 
   <script src="../javascripts/beerSearch.js"></script>
 <% include ./partials/footer %>
