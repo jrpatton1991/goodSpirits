@@ -45,6 +45,11 @@ function getBeers(arrLikes){
 
 function listLikes(){
   for(i = 0; i < beerList.length; i++){
-    $('#beerlikes').append('<div class="well well-sm col-sm-3"><a href="/beers/'+beerList[i].id + '">' + beerList[i].name + '</a><p>"'+ likeList[i].review +'"</p></div>');
+    var like = likeList[i].review;
+    console.log(like == true)
+    if (like) {
+      like = '"' + like + '"';
+    }
+    $('#beerlikes').append('<div class="well well-sm col-sm-3"><a href="/beers/'+beerList[i].id + '">' + beerList[i].name + '</a><p>'+ like +'</p></div>');
   }
 };
