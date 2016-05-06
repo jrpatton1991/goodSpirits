@@ -1,6 +1,7 @@
 var listOfPeople = [];
 var beerId = window.location.pathname.split('/');
   beerId = beerId[beerId.length - 1];
+var likes = [];
 
 $(document).ready(function() {
 $('.like').data('id', beerId);
@@ -18,6 +19,7 @@ function getUsers(beerId){
   dataType:'JSON'
   })
   .done(function(data, textStatus){
+    likes = data;
     getUserNames(data);
   })
   .fail(function(data, textStatus){
@@ -66,7 +68,7 @@ function getBeerImg(beerInfo) {
 function listUsers(){
   for(i = 0; i < listOfPeople.length; i++){
     console.log(listOfPeople[i]);
-    $('#usersList').append('<div class="well well-sm col-sm-3"><a href="/users/'+ listOfPeople[i]._id + '">' + listOfPeople[i].username + '</div>');
+    $('#usersList').append('<div class="well well-sm col-sm-3"><a href="/users/'+ listOfPeople[i]._id + '">' + listOfPeople[i].username + '</a><p>"' + likes[i].review + '"</p></div>');
   }
 }
 
