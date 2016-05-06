@@ -16,7 +16,7 @@ function displayBeersLiked(){
     dataType: 'JSON'
   })
   .done(function(data, textStatus) {
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < 10; i++) {
       // console.log(data[i])
       var beerId = data[i].beerId
       getBeerName(beerId);
