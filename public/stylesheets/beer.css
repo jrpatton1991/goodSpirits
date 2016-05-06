@@ -1,3 +1,5 @@
+// beer.css
+
 img {
   max-width: 200px;
   margin: 2px 0px 0px 500px;
@@ -25,10 +27,10 @@ ul {
  /* margin: 1px 1px;*/
  }
 
-a {
+ a {
   color: white;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 a:hover {
@@ -50,32 +52,8 @@ h2 {
   margin-bottom: 15px;
 }
 
-h3 {
-  color: #0596D5;
+button#like {
+  display: relative;
+  right: 600px;
 }
 
-button.like {
-  width: 200px;
-  font-family: "Open Sans", sans-serif;
-  font-size: 15px;
-  background-color: white;
-  margin-top: 15px;
-  /*float: left;*/
-  border: 2px solid #24D560;
-  border-radius: 10px;
-}
-
-button.like:hover {
-  background-color: #24D560;
-  cursor: pointer;
-}
-
-
-#review {
-height: 80px;
-width: 300px;
-}
-
-.well p {
-  font-size: 15px;
-}
