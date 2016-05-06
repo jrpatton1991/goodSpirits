@@ -20,22 +20,23 @@ function updateBeerList(){
   string = $('#searchForBeer').val();
   var newRegexpSearch = new RegExp(string, 'gi')
   //searchedBeers = beerName;
+  var searchedId = [];
   var searchedBeers = [];
   for (var i = 0, j = 0; i < beerName.length; i++) {
     if (beerName[i].match(new RegExp(string, "gi"))){
       searchedBeers[j] = beerName[i]
+      searchedId[j] = beerId[i]
       j++;
     }
   }
-  console.log(searchedBeers)
-
   $('#beerList').html(null)
-  listArr(searchedBeers)
+  listArr(searchedBeers, searchedId)
 }
 
-function listArr(list){
+function listArr(list , id){
   for(i = 0; i < list.length; i++){
-    appendToList(beerId[i] , list[i])
+    let currentBeerId = id[i] || beerId[i];
+    appendToList(currentBeerId, list[i])
   };
   setEventForLike();
 }
