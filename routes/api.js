@@ -9,7 +9,7 @@ var apiKey = process.env.LCBO_KEY;
 var request = require('request');
 
 
-/* GET profile page. */
+/* GET other user's profile page. */
 router.get('/users/:id', function(req, res, next) {
   var userId = req.params.id;
   User.find({ "_id": userId }, function(error, data) {
