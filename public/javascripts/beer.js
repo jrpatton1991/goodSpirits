@@ -11,7 +11,6 @@ setEventForLike();
 
 });
 
-
 function getUsers(beerId){
   $.ajax({
   url:'/api/likes/beers/' + beerId,
@@ -29,21 +28,21 @@ function getUsers(beerId){
 
 function getUserNames(likes) {
   for(i = 0; i < likes.length; i++){
-  var userId = likes[i].userId;
-  $.ajax({
-    url: '/api/users/' + userId,
-    method: 'GET',
-    dataType: 'JSON'
-  })
-  .done(function(data, textStatus){
-    listOfPeople.push(data);
-    $('#usersList').html(null);
-    listUsers();
-  })
-  .fail(function(data, textStatus){
-    console.log("ERROR getting likes. status: " + textStatus);
-  });
-}
+    var userId = likes[i].userId;
+    $.ajax({
+      url: '/api/users/' + userId,
+      method: 'GET',
+      dataType: 'JSON'
+    })
+    .done(function(data, textStatus){
+      listOfPeople.push(data);
+      $('#usersList').html(null);
+      listUsers();
+    })
+    .fail(function(data, textStatus){
+      console.log("ERROR getting likes. status: " + textStatus);
+    });
+  }
 }
 
 function getBeerInfo() {
@@ -71,7 +70,6 @@ function listUsers(){
     if (like) {
       like = '"' + like + '"';
     }
-    console.log(listOfPeople[i]);
     $('#usersList').append('<div class="well well-sm col-sm-3"><a href="/users/'+ listOfPeople[i]._id + '">' + listOfPeople[i].username + '</a><p>' + like + '</p></div>');
   }
 }
@@ -79,16 +77,13 @@ function listUsers(){
 //function to add likes to db
 function setEventForLike(){
   $('.like').click(function(e){
-    console.log('clicked');
     $(this).next().slideToggle();
   })
   $('.like').click(function(){
-      console.log('clicked Submit');
       var submitBtn = $(this);
       var beerId = submitBtn.data('id');
       var textBox = $('#review');
       var userReview = textBox.val();
-      console.log(userReview);
       $.ajax({
         url: '/api/likes',
         method:'POST',
@@ -105,4 +100,3 @@ function setEventForLike(){
       })
   })
 }
-
