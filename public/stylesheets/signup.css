@@ -1,8 +1,9 @@
 
 #signupheader {
-  font-size: 40px;
-  margin-top: 80px;
-  margin-left: 15px;
+  margin-top: 40px;
+  color: #0596D5;
+  font-weight: 600px;
+  font-size: 70px;
 }
 
 #loginbutton {
@@ -138,3 +139,11 @@ body {
 
 
 }
+
+h2 {
+  margin-top: 40px;
+  color: #0596D5;
+  font-weight: 600px;
+  font-size: 70px;
+}
+

@@ -23,8 +23,10 @@ Our users are anyone who's ever needed to look for a new beer, anyone who wants 
 
 As a user I'd love a place where I can come and see what drinks i should try next and what others have liked. Good Spirits is that place for me.  I can see what drinks are popular, I can see things i've tried and loved, I can search for new drinks, and I can write and read reviews of the various ones. It is easy for me to login and when I do I always find myself in Good Spirits.
 
+
 ###wireframes
 [wireframes][http://imgur.com/a/eZF8a]
+
 
 ###Future goals and issues to address
 * Show when a beer has already been liked
