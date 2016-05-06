@@ -61,6 +61,8 @@ router.post('/likes', function(req, res, next) {
 });
 
 
+
+
 //Get Individual Beers from API
 router.get('/beers/:id', function(req, res, next) {
   var beerId = req.params.id;
@@ -92,6 +94,15 @@ router.get('/likes/beers/:id', function(req, res, next) {
 router.get('/likes/users/:id', function(req, res, next) {
   var userId = req.params.id;
   Likes.find({"userId": userId}, function(err, data) {
+    res.json(data);
+  })
+})
+
+//Get likes of individual beers
+
+router.get('/likes', function(req,res,next){
+  var beerId = req.params.id;
+  Likes.find({}, function(err, data) {
     res.json(data);
   })
 })

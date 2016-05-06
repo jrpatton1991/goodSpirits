@@ -16,7 +16,7 @@ a {
     position: fixed;
     top: 0;
     left: 0;*/
-    width: 100%;
+    /*width: 100%;
     height: 60px;
     min-height: 60px;
     line-height: 60px;
@@ -45,6 +45,7 @@ a {
   left: 0;
   /*margin-left: -10px;*/
 }
+
 
 #feed {
   padding: 80px;
@@ -95,7 +96,7 @@ a {
 
 #h1 {
   font-family: 'Playball', cursive;
-  font-size: 130px;
+  font-size: 95px;
   margin-left: 250px;
   margin-top: 5px;
   color: #FE4B28;
@@ -104,8 +105,8 @@ a {
 #tagline{
   color:#FE4B28;
   font-size: 25px;
-  padding: 30px;
-  margin-left: 320px;
+  padding: 3px;
+  margin-left: 260px;
   font-family: 'Playball', cursive;
 }
 

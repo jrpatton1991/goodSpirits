@@ -49,6 +49,7 @@ function getBeers(){
     dataType:'json'
   })
   .done(function(data, textStatus){
+    console.log(data)
     for( var i = 0; i < data.length; i++){
       beerName.push(data[i].name);
       beerId.push(data[i].id);
