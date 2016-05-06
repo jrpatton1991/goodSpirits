@@ -1,9 +1,3 @@
-body {
-
-  font: "Lucida Grande", Helvetica, Arial, sans-serif;
-
-}
-
 #background{
 
   background-size: cover;
@@ -107,19 +101,28 @@ a {
 
 }
 
+#beerlikes{
+  list-style: none;
+  font-size: 30px;
+  padding: 10px;
+  font-family: 'Arvo', bold;
+}
+
 .hidden{
   display:none;
 }
 
-li:hover .hidden{
+/*li:hover .hidden{
   display:inline-block;
   color:black;
-}
+}*/
 
 address{
   color: #FE4B28;
   text-align: center;
   padding: 10px;
-  font-size: 20px;
+  font-size: 10px;
   font-family: 'Playball', cursive;
+  margin-top: 900px;
+
 }
