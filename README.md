@@ -25,7 +25,7 @@ As a user I'd love a place where I can come and see what drinks i should try nex
 
 
 ###wireframes
-[wireframes][http://imgur.com/a/eZF8a]
+[wireframes](http://imgur.com/a/eZF8a)
 
 
 ###Future goals and issues to address
