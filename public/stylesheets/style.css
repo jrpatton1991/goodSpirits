@@ -1,8 +1,5 @@
 #background{
 
-  background-size: cover;
-  background-repeat: no-repeat;
-
 }
 
 a {
@@ -80,17 +77,23 @@ a {
 
 #h1 {
   font-family: 'Playball', cursive;
-  font-size: 130px;
+  font-size: 100px;
   margin-left: 250px;
-  margin-top: 5px;
+  margin-top: 3px;
   color: #FE4B28;
+}
+
+#recentlyliked{
+  font-size: 50px;
+  padding: 40px 0 0 0;
+  font-family: 'Rubik', italic;
+  margin-left: -40px;
 }
 
 #tagline{
   color:#FE4B28;
   font-size: 25px;
-  padding: 30px;
-  margin-left: 320px;
+  margin-left: 270px;
   font-family: 'Playball', cursive;
 }
 
@@ -104,25 +107,23 @@ a {
 #beerlikes{
   list-style: none;
   font-size: 30px;
-  padding: 10px;
-  font-family: 'Arvo', bold;
+  padding: 10px 0 0 0;
+  font-family: 'Arapey', cursive;
+  font-weight: bold;
+
 }
 
 .hidden{
   display:none;
 }
 
-/*li:hover .hidden{
-  display:inline-block;
-  color:black;
-}*/
 
 address{
   color: #FE4B28;
   text-align: center;
   padding: 10px;
-  font-size: 10px;
+  font-size: 14px;
   font-family: 'Playball', cursive;
-  margin-top: 900px;
+  margin-top: 600px;
 
 }
