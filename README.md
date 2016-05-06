@@ -1,4 +1,4 @@
-# goodSpirits
+# GoodSpirits
 
 ###Technologies Used
 ####Frontend
